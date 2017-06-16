@@ -502,7 +502,7 @@ function quadrant(obj) {
             y: '50%',
             textStyle: textStyle
         }, {
-            text: "工作业绩",
+            text: "工作时间",
             x: '70%',
             y: '53%',
             textStyle: textStyles
@@ -544,7 +544,7 @@ function quadrant(obj) {
             color: '#000000'
         },
         yAxis: {
-            name: '工作时长',
+            name: '工作效率',
             type: 'value',
             splitLine: {
                 show: false
