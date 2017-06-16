@@ -8,12 +8,12 @@ var DATE_MONTH_YYYYMM = 'yyyyMM';
 var CTSI_API_JSON;
 // 对比系列
 var CONTRAST_HTMLDOMAIN = 'http://www.ixiaoru.com';
-var ANALY_POSITIONCHANGECONTRAST_URL = '/hrbp-content/view/analy/positionChangeContrast.html';
-var ANALY_ZAIGANGABNORMAL_URL = '/hrbp-content/view/analy/zaiGangAbnormal.html';
-var NORM_LIGANGCONTRAST_URL = '/hrbp-content/view/norm/liGangContrast.html';
-var NORM_WORKSTANDARDCONTRAST_URL = '/hrbp-content/view/norm/workStandardContrast.html';
-var NORM_ZENGGANGCONTRAST_URL = '/hrbp-content/view/norm/zengGangContrast.html';
-var POTENCY_TASKPERFORMCONTRAST_URL = '/hrbp-content/view/potency/taskPerformContrast.html';
+var ANALY_POSITIONCHANGECONTRAST_URL = '/hrbp-content-1/view/analy/positionChangeContrast.html';
+var ANALY_ZAIGANGABNORMAL_URL = '/hrbp-content-1/view/analy/zaiGangAbnormal.html';
+var NORM_LIGANGCONTRAST_URL = '/hrbp-content-1/view/norm/liGangContrast.html';
+var NORM_WORKSTANDARDCONTRAST_URL = '/hrbp-content-1/view/norm/workStandardContrast.html';
+var NORM_ZENGGANGCONTRAST_URL = '/hrbp-content-1/view/norm/zengGangContrast.html';
+var POTENCY_TASKPERFORMCONTRAST_URL = '/hrbp-content-1/view/potency/taskPerformContrast.html';
 // 参数
 var INDEX_RED = 60;
 
