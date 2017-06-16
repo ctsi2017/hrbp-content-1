@@ -427,23 +427,29 @@ function quadrant(obj) {
             return Math.pow((x / a), 2) + Math.pow((y / b), 2) < 1 ? true : false;
         },
         fourQuadrant = function (data) {
-            if (data[0] > 0 && data[1] > 0) {
+            if(data[0]>0 && data[1]>0){
                 return 1;
-            } else if (data[0] < 0 && data[1] > 0) {
-                return 2;
-            } else if (data[0] < 0 && data[1] < 0) {
+            }else if(data[0]<0 && data[1]>0){
+                if(data[1]==50){
+                    return 4;
+                }else{
+                    return 2;
+                }
+            }else if(data[0]<0 && data[1]<0){
                 return 3;
-            } else if (data[0] > 0 && data[1] < 0) {
-                return 4;
-            } else {
-                return 5;
+            }else if(data[0]>0 && data[1]<0){
+                if(data[0]==50){
+                    return 2;
+                }else{
+                    return 4;
+                }
             }
         }
 
     var xPoints = obj.array[0].workTimeOrigin;
     var ypoint = obj.array[0].workPerformOrigin;
-    var circleXlenth = obj.array[0].workTimeTopPoint;
-    var circleYlenth = obj.array[0].workTimeBottomPoint;
+    var circleXlenth = (obj.array[0].workTimeTopPoint - obj.array[0].workTimeBottomPoint)/2;
+    var circleYlenth = (obj.array[0].workPerformTopPoint - obj.array[0].workPerformBottomPoint)/2;
     var dataArr = [];
     for (var i = 0; i < obj.arr.length; i++) {
         var dataArrSmall = [];
@@ -513,9 +519,9 @@ function quadrant(obj) {
         tooltip: {
             show: true,
             trigger: 'item',
-            formatter: function (p) {
-                console.log(p);
-                return (Number(p.data[0]) + Number(xPoints)) + "," + (Number(p.data[1]) + Number(ypoint));
+            formatter: function(p){
+                // console.log(p);
+                return "工作时长:"+(Number(p.data[0])+Number(xPoints))+",工作效能:"+(Number(p.data[1])+Number(ypoint));
                 //return p;
             }
         },
