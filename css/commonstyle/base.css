@@ -63,20 +63,12 @@ a {
 .base-header div .iconfont {
   font-weight: 600;
 }
-.base-header div s{
-  display: inline-block;
-  width: 1.7rem;
-  height: 100%;
-  overflow: hidden;
-  text-overflow:ellipsis;
-  white-space: nowrap;
-}
 .base-header .base-lhead {
   text-indent: 0.05rem;
 }
 .base-header .base-lhead s {
   display: inline-block;
-  width: 1.7rem;
+  width: 1.6rem;
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
