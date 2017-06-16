@@ -713,6 +713,12 @@ function warningValue() {
  */
 function checkContrastRegionByPermission(regionTmp, regionStr) {
   var obj = {};
+
+  if (CTSI_API_JSON.baseInfo.userMaxPermission === 0) { // 集团-比较区域是-省
+    obj.province = regionTmp;
+    return obj;
+  }
+
   obj.province = getProvinceByUserMaxPermission(CTSI_API_JSON);
   var objTmp = null;
 
@@ -744,7 +750,7 @@ function checkContrastRegionByPermission(regionTmp, regionStr) {
     obj.city = CTSI_API_JSON.baseInfo.city;
     obj.district = CTSI_API_JSON.baseInfo.district;
     obj.street = CTSI_API_JSON.baseInfo.street;
-    obj.city = region;
+    obj.grid = regionTmp;
   }
   return obj;
 }
@@ -803,15 +809,23 @@ function getContrastMonthArray(type, month) {
 function getContrastCompareTypeByType(type) {
   if (type === 1) {
     // 区域对比的数据是：当前区域信息中的第二级数据.
+    if (CTSI_API_JSON.baseInfo.userMaxPermission === 0) {
+      return 'province';
+    }
     if (CTSI_API_JSON.baseInfo.userMaxPermission === 1) {
       return 'city';
     }
     if (CTSI_API_JSON.baseInfo.userMaxPermission === 2) {
       return 'district';
     }
-    if (CTSI_API_JSON.baseInfo.userMaxPermission === 3
-        || CTSI_API_JSON.baseInfo.userMaxPermission === 4) {
+    if (CTSI_API_JSON.baseInfo.userMaxPermission === 3) {
       return 'street';
+    }
+    if (CTSI_API_JSON.baseInfo.userMaxPermission === 4) {
+      return 'grid';
+    }
+    if (CTSI_API_JSON.baseInfo.userMaxPermission === 5) {
+      return 'error';
     }
   }
   if (type === 2) {
