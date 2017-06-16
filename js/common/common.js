@@ -469,7 +469,6 @@ function quadrant(obj) {
     var option = {
 
         title: [{
-            text: "单位：人数",
             x: '0%',
             y: '2%',
             textStyle: {
@@ -502,7 +501,7 @@ function quadrant(obj) {
             y: '50%',
             textStyle: textStyle
         }, {
-            text: "工作时间",
+            text: "工作时长",
             x: '70%',
             y: '53%',
             textStyle: textStyles
