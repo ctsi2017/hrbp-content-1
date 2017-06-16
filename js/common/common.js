@@ -198,7 +198,6 @@ function early_columar(obj) { //这是长方形柱状图
     }
     var chart = document.getElementById(obj.idname || 'h-columnar');
     var echart = echarts.init(chart);
-    console.log(obj);
     var titleStyle = {
         color: '#666666',
         fontStyle: 'normal',
@@ -222,7 +221,7 @@ function early_columar(obj) { //这是长方形柱状图
         ],
         tooltip: {
             trigger: 'axis',
-            formatter: '{a} : {c}% <br/> {a2} : {c2}'
+            formatter: '{a} : {c}%'
         },
         grid: [
             {x: '12%', y: '20%',width:'87%',height:"55%"},
@@ -275,6 +274,25 @@ function early_columar(obj) { //这是长方形柱状图
                 }
             },
             data: obj.data || [23, 25, 35, 40, 60],
+            markLine: {
+                silent: true,
+                symbol: 'none',
+                label: {
+                    normal: {
+                        show: false
+                    }
+                },
+                lineStyle: {
+                    normal: {
+                        color: '#e66440',
+                        type: 'dashed',
+                        //width: 2
+                    }
+                },
+                data: [{
+                    yAxis: obj.earlyLine[0]
+                }]
+            }
 
         },
             {
@@ -302,22 +320,6 @@ function early_columar(obj) { //这是长方形柱状图
                     return arr;
                 }(),
 
-            },
-            {
-                name: '预警值',
-                type: "line",
-                // xAxisIndex : 1,
-                itemStyle: {
-                    normal: {
-                        opacity: 0
-                    }
-                },
-                lineStyle: {
-                    normal: {
-                        type: 'detail'
-                    }
-                },
-                data: obj.earlyLine
             }]
     };
 
