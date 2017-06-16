@@ -424,7 +424,7 @@ function quadrant(obj) {
 
 
     var prove = function (a, b, x, y) {
-            return Math.pow((x / a), 2) + Math.pow((y / b), 2) < 1 ? true : false;
+            return Math.pow((x/a),2) + Math.pow((y/b),2) < 1 ? true : false;
         },
         fourQuadrant = function (data) {
             if(data[0]>0 && data[1]>0){
@@ -448,18 +448,21 @@ function quadrant(obj) {
 
     var xPoints = obj.array[0].workTimeOrigin;
     var ypoint = obj.array[0].workPerformOrigin;
+    // var circleXlenth = obj.array[0].workTimeTopPoint;
+    // var circleYlenth = obj.array[0].workTimeBottomPoint;
     var circleXlenth = (obj.array[0].workTimeTopPoint - obj.array[0].workTimeBottomPoint)/2;
     var circleYlenth = (obj.array[0].workPerformTopPoint - obj.array[0].workPerformBottomPoint)/2;
     var dataArr = [];
-    for (var i = 0; i < obj.arr.length; i++) {
-        var dataArrSmall = [];
-        dataArrSmall.push(obj.arr[i].workPerformance - xPoints);
-        dataArrSmall.push(obj.arr[i].workingHours - ypoint);
-        dataArr.push(dataArrSmall);
-        // console.log(dataArr);
-    }
 
+    for(var i = 0; i < obj.arr.length; i++) {
+        var dataArrSmall = [];
+        dataArrSmall.push(obj.arr[i].workingHours-xPoints);
+        dataArrSmall.push(obj.arr[i].workPerformance-ypoint);
+        dataArr.push(dataArrSmall);
+        //	console.log(dataArr);
+    }
     pathData = ellipsePath(0, 0, circleXlenth, circleYlenth);
+
     var textStyle = {
         color: '#666',
         fontStyle: 'normal',
@@ -477,6 +480,7 @@ function quadrant(obj) {
     var option = {
 
         title: [{
+            text: "单位：人数",
             x: '0%',
             y: '2%',
             textStyle: {
@@ -509,7 +513,7 @@ function quadrant(obj) {
             y: '50%',
             textStyle: textStyle
         }, {
-            text: "工作时长",
+            text: "工作时间",
             x: '70%',
             y: '53%',
             textStyle: textStyles
@@ -520,7 +524,7 @@ function quadrant(obj) {
             show: true,
             trigger: 'item',
             formatter: function(p){
-                // console.log(p);
+                console.log(p);
                 return "工作时长:"+(Number(p.data[0])+Number(xPoints))+",工作效能:"+(Number(p.data[1])+Number(ypoint));
                 //return p;
             }
@@ -551,7 +555,7 @@ function quadrant(obj) {
             color: '#000000'
         },
         yAxis: {
-            name: '工作效率',
+            name: '工作业绩',
             type: 'value',
             splitLine: {
                 show: false
@@ -603,6 +607,7 @@ function quadrant(obj) {
         }]
     };
     echart.setOption(option);
+    // $(".base-chara").css("display","flex");
 }
 
 function h_region(data, obj, callback) {
