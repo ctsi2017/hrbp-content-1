@@ -21,12 +21,11 @@ function showmap(city) {
     var zoom = map.getZoom();  //获取到当前的缩放大小zoom值
     var centers = map.getCenter();  //获取到中心点的坐标
     // var position = getCoordinate(map); //这是获取四个坐标点
-    var center = centers.lat + "," + centers.lng;
+    var center = centers.lng + "," +  centers.lat;
     var widthHeight = $("#container").height() + "," + $("#container").width();//地图的宽高
     var checkChange = 1;
     if (zoom < 14) {
         map.setFitView();
-
         postInfoOverviewPng(widthHeight, zoom, center);
         checkChange = 2;
     } else {
@@ -36,7 +35,8 @@ function showmap(city) {
     map.on('moveend', function (e) {  //这是地图移动结束获取事件
         var zoom1 = map.getZoom();  //获取到当前的缩放大小zoom值
         var centers = map.getCenter();  //获取到中心点的坐标
-        var center = centers.lat + "," + centers.lng;
+        var center = centers.lng + "," +  centers.lat;
+
         // var position = getCoordinate();
         if (zoom1 < 14) {
             map.clearMap();
@@ -45,8 +45,10 @@ function showmap(city) {
             postInfoOverviewPng(widthHeight, zoom, center);
         } else {
             if (checkChange == 2) {
+                map.clearMap();
                 postInfoOverview();
                 checkChange = 1;
+
             }
         }
 
@@ -54,18 +56,20 @@ function showmap(city) {
     map.on('zoomend', function (e) { //这是放大缩小地图的事件
         var zoom2 = map.getZoom();
         var centers = map.getCenter();
-        var center = centers.lat + "," + centers.lng;
+        var center = centers.lng + "," +  centers.lat;
         // callback(northWest, southwest, southEast, Northeast);
         if (zoom2 < 14) {
             map.clearMap();
             // map.setFitView();
-            postInfoOverviewPng(widthHeight, zoom, center);
             checkChange = 2;
+            postInfoOverviewPng(widthHeight, zoom, center);
         } else {
             // var arr = postInfoOverview();
             if (checkChange == 2) {
+                map.clearMap();
                 postInfoOverview();
                 checkChange = 1;
+
             }
         }
     });
