@@ -662,7 +662,11 @@ function h_region(data, obj, callback) {
         $("." + obj.rightDrop + " p").eq(index).addClass("rightdropstyle").siblings().removeClass("rightdropstyle");
         // rightindex = index;
         rightval = $("." + obj.rightDrop + " p").eq(index).html();
-
+        if(rightval == "全部"){
+            $("#region").html(leftval);
+        }else{
+            $("#region").html(rightval);
+        }
         //在此可定义回调函数 并返回获取点击的值
         $("#droplDown").stop().slideUp();
         $("." + obj.developDrop + " .icon-xiala").removeClass("icon-shangla");

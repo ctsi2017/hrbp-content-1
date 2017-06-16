@@ -67,6 +67,14 @@ a {
 .base-header .base-lhead {
   text-indent: 0.05rem;
 }
+.base-header .base-lhead s {
+  display: inline-block;
+  width: 0.97rem;
+  height: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 .base-header .base-chead {
   text-align: center;
   text-indent: 0.15rem;
@@ -504,6 +512,18 @@ a {
   line-height: 2.25rem;
   font-size: 0.3rem;
   margin: 0 auto;
+}
+.base-moreData-contrast {
+  height: 2.25rem;
+  width: 5rem;
+  display: none;
+  text-align: center;
+  line-height: 2.25rem;
+  font-size: 0.3rem;
+  margin: 0 auto;
+}
+.columar-area-point {
+  display: none;
 }
 .container {
   min-height: 11.8rem;
