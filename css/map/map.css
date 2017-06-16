@@ -69,7 +69,7 @@ a {
 }
 .base-header .base-lhead s {
   display: inline-block;
-  width: 0.97rem;
+  width: 1.5rem;
   height: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -831,6 +831,7 @@ a {
   width: 6.5rem;
   margin: 0 auto;
   padding-top: 0.2rem;
+  font-size: 0.26rem;
 }
 .container .map-potency .map-ecplan p {
   color: #737373;

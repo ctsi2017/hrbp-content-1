@@ -50,3 +50,12 @@
 .leave-round .leave-block .leave-block6 span {
   background-color: #3c424f;
 }
+.leave-explain{
+  width: 6.8rem;
+  margin: 0 auto;
+  margin-top: 0.1rem;
+  font-size: 0.26rem;
+}
+.leave-explain span{
+  color: #df5e39;
+}
