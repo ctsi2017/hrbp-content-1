@@ -933,8 +933,8 @@ window.lCalendar = (function() {
                 $(".base-header").removeClass("backgroundThree");
                 $(".data-closedrop").fadeOut();
                 setItem("getDate", date_year+date_mm+date_dd);
-                formDataDay(date_year+date_mm+date_dd);
                 $("#month").html(date_year+"."+date_mm+"."+date_dd);
+                formDataDay(date_year+date_mm+date_dd);
                 document.getElementById("dateFlag").value = "true";
                 //closeMobileCalendar(e);
 			}
@@ -953,8 +953,8 @@ window.lCalendar = (function() {
                 $(".base-header").removeClass("backgroundThree");
                 $(".data-closedrop").fadeOut();
                 setItem("getDate", date_year+date_mm);
-                formDataMouth(date_year+date_mm);
                 $("#month").html(date_year+"."+date_mm);
+                formDataMouth(date_year+date_mm);
 
                 document.getElementById("monthFlag").value = "true";
                 //closeMobileCalendar(e);
