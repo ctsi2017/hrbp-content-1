@@ -729,7 +729,7 @@ function h_region(data, obj, callback) {
 //这是点击加载人员下拉的函数
 function createPersonnel(data, obj, callback) {
     var leftvalPost;
-    //进入页面加载时循环创建左侧点击二级分类
+    //进入页面加载时循环创建左侧点击二级分类 obj.leftDrop代表左边下拉盒子类名  data是传递进来渲染的数据
     for (var i = 0; i < data.length; i++) {
         $("." + obj.leftDrop).append("<p>" + data[i] + "</p>");
     }
@@ -751,7 +751,7 @@ function createPersonnel(data, obj, callback) {
 
     });
 
-    //这是点击下面遮罩层区域让选择消失，表示取消选择
+    //这是点击下面遮罩层区域让选择消失，表示取消选择 obj.developDrop代表下拉父元素的类名
     $(".base-area-closedrop").on("touchend", function () {  //这是点击选择区域消失
         $("#droplDown").stop().slideUp();
         $("." + obj.developDrop + " .icon-xiala").removeClass("icon-shangla");
