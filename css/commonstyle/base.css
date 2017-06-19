@@ -64,7 +64,7 @@ a {
   font-weight: 600;
 }
 .base-header .base-lhead {
-  text-indent: 0.05rem;
+  text-align: center;
 }
 .base-header .base-lhead s {
   display: inline-block;
