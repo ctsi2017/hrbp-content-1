@@ -62,6 +62,7 @@ a {
 }
 .base-header div .iconfont {
   font-weight: 600;
+  display: inline-block;
 }
 .base-header .base-lhead {
   text-align: center;
@@ -71,8 +72,15 @@ a {
   width: 1.5rem;
   height: 100%;
   overflow: hidden;
+  float: left;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.base-header .base-lhead span{
+  float: left;
+}
+.base-header .base-lhead base-iconone{
+  margin-top: -0.05rem;
 }
 .base-header .base-chead {
   text-align: center;
