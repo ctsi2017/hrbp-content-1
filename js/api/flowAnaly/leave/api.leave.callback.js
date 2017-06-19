@@ -43,7 +43,7 @@ function cbEmpDimissionInclination(json) {
             dataName[i] = item.workEfficiency + '\n\n' + Number(item.totalNum) + '人'; // 区域\n总人数
             data[i] = getProportion(item.turnoverInttalNum, item.totalNum); // 离职倾向总人数,总人数
         });
-        changeHColumar('leave-columnar', dataName, data, '可能离职人数');
+        changeHColumar('leave-columnar', dataName, data, '可能离职人数占比');
     }
     if (checkCodeEqualsOther(json)) {
         checkDivIfExist('leave-columnar-point', 'r-leave-columnar');
