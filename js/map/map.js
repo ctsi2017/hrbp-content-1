@@ -42,7 +42,7 @@ function showmap(city) {
             map.clearMap();
             // map.setFitView();
             checkChange = 2;
-            postInfoOverviewPng(widthHeight, zoom, center);
+            postInfoOverviewPng(widthHeight, zoom1, center);
         } else {
             if (checkChange == 2) {
                 map.clearMap();
@@ -62,7 +62,7 @@ function showmap(city) {
             map.clearMap();
             // map.setFitView();
             checkChange = 2;
-            postInfoOverviewPng(widthHeight, zoom, center);
+            postInfoOverviewPng(widthHeight, zoom2, center);
         } else {
             // var arr = postInfoOverview();
             if (checkChange == 2) {
