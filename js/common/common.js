@@ -45,8 +45,8 @@ function h_ring(obj) {   //这是圆圈形状的图标
                         lineStyle:{
                             type : 'dotted'
                         },
-                        length : 5,
-                        length2 : 5
+                        length : 10,
+                        length2 : 10
 
                     }
                 },
