@@ -480,7 +480,6 @@ function quadrant(obj) {
     var option = {
 
         title: [{
-            text: "单位：人数",
             x: '0%',
             y: '2%',
             textStyle: {
@@ -513,7 +512,7 @@ function quadrant(obj) {
             y: '50%',
             textStyle: textStyle
         }, {
-            text: "工作时间",
+            text: "工作时长",
             x: '70%',
             y: '53%',
             textStyle: textStyles
@@ -525,7 +524,7 @@ function quadrant(obj) {
             trigger: 'item',
             formatter: function(p){
                 console.log(p);
-                return "工作时长:"+(Number(p.data[0])+Number(xPoints))+",工作效能:"+(Number(p.data[1])+Number(ypoint));
+                return "工作时长:"+(Number(p.data[0])+Number(xPoints))+",工作业绩:"+(Number(p.data[1])+Number(ypoint));
                 //return p;
             }
         },
