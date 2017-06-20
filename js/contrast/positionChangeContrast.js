@@ -8,6 +8,7 @@ function positionChangeContrast() {
     var getSite = getItem("getArea"); //默认区域
     var getPost = getItem("getPost"); //默认岗位
     var getTime = getItem("getDate"); //默认时间
+    // alert(getTime);
     var fiveCode = getTime.substring(4,5);
     if(fiveCode !="."){
         getTime = getTime.substring(0,4)+"."+getTime.substring(4,getTime.length);
@@ -105,7 +106,7 @@ function positionChangeContrast() {
         $(".multiSelect").children("li.selectedList").remove();
     }
 
-    $('.contrastList li').on('touchend', function (e) {
+    $('.contrastList li').on('click', function (e) {
         e.preventDefault();
         var i = $(this).index();
         $('.contrastList li').removeClass('currentOption').eq(i).addClass('currentOption');
@@ -160,7 +161,7 @@ function positionChangeContrast() {
     });
 
 //多维度取消选择
-    $(".addAreaList ul").on("touchend", "li", function () {
+    $(".addAreaList ul").on("click", "li", function () {
         var selectedLength = $(".addAreaList ul .selectedList").length;
         if ($(this).hasClass('selectedList')) {
             $(this).removeClass('selectedList');
@@ -178,7 +179,7 @@ function positionChangeContrast() {
             }
         }
     });
-    $(".addAreaList ul").on("touchend","li.disabled",function(){
+    $(".addAreaList ul").on("click","li.disabled",function(){
         $(this).removeClass('selectedList');
     });
 
@@ -226,7 +227,7 @@ function positionChangeContrast() {
     });
 
 //左单维选择
-    $("#selectLeftArea ul").on("touchend", "li", function () {
+    $("#selectLeftArea ul").on("click", "li", function () {
         num = 0;
         $("#leftSelect .icon-shangla").removeClass("icon-shangla").addClass("icon-xiala");
         var val = $(this).html();
@@ -242,7 +243,7 @@ function positionChangeContrast() {
     });
 
 //右单维选择
-    $("#selectRightArea ul").on("touchend", "li", function () {
+    $("#selectRightArea ul").on("click", "li", function () {
         num = 0;
         $("#rightSelect .icon-shangla").removeClass("icon-shangla").addClass("icon-xiala");
         var val = $(this).html();
@@ -261,21 +262,21 @@ function positionChangeContrast() {
     var whiteBg = document.querySelector(".whiteBg");
     var selectLeftArea = document.querySelector("#selectLeftArea");
     var selectRightArea = document.querySelector("#selectRightArea");
-    whiteBg.addEventListener('touchend', function (e) {
+    whiteBg.addEventListener('click', function (e) {
         e.stopPropagation();
     });
-    addAreaList.addEventListener('touchend', function (e) {
+    addAreaList.addEventListener('click', function (e) {
         $(this).css("display", "none");
         $('.addAreaList ul li').removeClass('selectedList');
         num = 0;
         $(".addContrast .icon-shangla").removeClass("icon-shangla").addClass("icon-xiala");
     });
-    selectLeftArea.addEventListener('touchend', function (e) {
+    selectLeftArea.addEventListener('click', function (e) {
         $(this).css("display", "none");
         num = 0;
         $("#leftSelect .icon-shangla").removeClass("icon-shangla").addClass("icon-xiala");
     });
-    selectRightArea.addEventListener('touchend', function (e) {
+    selectRightArea.addEventListener('click', function (e) {
         $(this).css("display", "none");
         num = 0;
         $("#rightSelect .icon-shangla").removeClass("icon-shangla").addClass("icon-xiala");
