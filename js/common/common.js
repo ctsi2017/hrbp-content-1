@@ -510,8 +510,8 @@ function quadrant(obj) {
             textStyle: textStyle
         }, {
             text: "普通",
-            x: '50%',
-            y: '50%',
+            x: '40%',
+            y: '55%',
             textStyle: textStyle
         }, {
             text: "工作时长",
